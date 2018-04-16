@@ -71,8 +71,11 @@ public class GameController {
 		
 		
 		computerPadd.checkOutOfBounds();
-		playerPadd.movePaddle();
 		playerPadd.checkOutOfBounds();
+		if(!screen.getGamePaused()) {
+			playerPadd.movePaddle();
+			computerPadd.movePaddleToBall();
+		}
 		
 		//ball stuff
 		
@@ -85,7 +88,7 @@ public class GameController {
 		
 		ball.updatePosition(getBall().getxVelocity(),getBall().getyVelocity());
 		playerPadd.updatePosition(getPlayerPadd().getyVelocity());
-		computerPadd.movePaddleToBall();
+	
 		
 	
 
@@ -385,7 +388,7 @@ public class GameController {
 					
 					screen.getPlayAgainButton().setVisible(true);
 					screen.getMenuButton().setVisible(true);
-					
+					screen.setGameEnded(true);
 					return true;
 			
 			}
