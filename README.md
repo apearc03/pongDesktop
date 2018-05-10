@@ -2,6 +2,9 @@
 
 Pong built with LibGDX
 
+# Dependencies
+
+Java Runtime Environment
 
 # Running and Packaging
 
